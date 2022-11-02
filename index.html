@@ -9,29 +9,62 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <title>Frontend Mentor | IP Address Tracker</title>
+    <title>IP Address Tracker</title>
+    <!-- Leaflet CSS && JS-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
     <main class="main">
       <section class="input-info">
         <h1 class="title">IP Address Tracker</h1>
-        <form>
-          <input type="text" placeholder="Search for any IP address or domain">
+        <form id="form">
+          <input
+            id="ipInp"
+            type="text"
+            placeholder="Search for any IP address"
+          />
+          <button type="submit">
+            <img src="./images/icon-arrow.svg" alt="submit arrow" />
+          </button>
         </form>
+        <p id="errMsg" class="error-msg">
+          Add a valid IP Address like 192.212.174.101
+        </p>
+        <section class="show-details">
+          <div class="ip-address">
+            <h5 class="title">IP Address</h5>
+            <p id="ipAddress" class="info">192.212.197.101</p>
+          </div>
+          <div class="location">
+            <h5 class="title">Location</h5>
+            <p id="location" class="info">Boston</p>
+          </div>
+          <div class="timezone">
+            <h5 class="title">Timezone</h5>
+            <p id="timezone" class="info">UTC -5:00</p>
+          </div>
+          <div class="isp">
+            <h5 class="title">ISP</h5>
+            <p id="isp" class="info">Space X</p>
+          </div>
+        </section>
       </section>
+      <div id="mapSection">
+        <div id="map"></div>
+      </div>
     </main>
-
-
-      IP Address Location
-    Timezone UTC
-    <!-- add offset value dynamically using the API -->
-    ISP
-
-    <!-- <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
+    <script src="./js/main.js"></script>
   </body>
 </html>

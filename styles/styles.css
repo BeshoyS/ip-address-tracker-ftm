@@ -1,0 +1,212 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+/* Variables */
+:root {
+  --color-verydarkgray: rgb(43, 43, 43);
+  --color-darkgray: rgb(150, 150, 150);
+  --color-white: rgb(255, 255, 255);
+  --color-black: rgb(0, 0, 0);
+  --color-red: rgb(253, 144, 144);
+  --box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.2);
+
+  --font-family: "Rubik", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  color: var(--color-white);
+}
+
+/* Main Content */
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Inputs */
+.input-info {
+  background: url(../images/pattern-bg.png) no-repeat center;
+  background-size: cover;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 45vh;
+  position: relative;
+}
+
+.input-info .title {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.input-info form {
+  position: relative;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+form input {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+input::placeholder {
+  color: var(--color-darkgray);
+}
+
+input:focus {
+  outline: none;
+}
+
+form button {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 10%;
+  border: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: var(--color-black);
+  cursor: pointer;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+button:hover {
+  background-color: var(--color-verydarkgray);
+}
+
+/* Error Msg */
+.error-msg {
+  font-size: 0.6rem;
+  color: var(--color-red);
+  display: none;
+}
+
+/* Details Display */
+.show-details {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  width: 90%;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  box-shadow: var(--box-shadow);
+}
+
+.show-details div {
+  position: relative;
+  width: 25%;
+  padding-bottom: 0.5rem;
+}
+
+.show-details div:not(.ip-address) {
+  padding-left: 1.5rem;
+}
+
+.show-details div:not(.ip-address)::before {
+  content: "";
+  border-right: 1px solid var(--color-darkgray);
+  opacity: 0.3;
+  position: absolute;
+  inset: 0 auto 0 0;
+}
+
+.show-details .title {
+  font-size: 0.6rem;
+  color: var(--color-darkgray);
+  margin-bottom: 1rem;
+}
+
+.show-details p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Map */
+#map {
+  height: 60vh;
+  z-index: 1;
+}
+
+/* Mobile Screen */
+@media screen and (max-width: 768px) {
+  main {
+    height: 100%;
+  }
+
+  /* Inputs */
+  .input-info {
+    height: 50vh;
+  }
+
+  .input-info form {
+    position: relative;
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .show-details {
+    flex-direction: column;
+    text-align: center;
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+  }
+
+  .show-details div {
+    position: relative;
+    width: 90%;
+  }
+
+  .show-details div:not(.ip-address) {
+    padding-left: 0;
+  }
+
+  .show-details div:not(.ip-address)::before {
+    display: none;
+  }
+
+  /* Map */
+  #map {
+    height: 80vh;
+  }
+}
